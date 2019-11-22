@@ -1,0 +1,26 @@
+﻿  1012_The_Best_Rank.cpp
+c:\users\justi\documents\github\ourctf\pat (advanced level) practice\1012_the_best_rank\1012_the_best_rank\1012_the_best_rank.cpp(49): warning C4244: “=”: 从“__int64”转换到“_Ty1”，可能丢失数据
+          with
+          [
+              _Ty1=int
+          ]
+c:\users\justi\documents\github\ourctf\pat (advanced level) practice\1012_the_best_rank\1012_the_best_rank\1012_the_best_rank.cpp(52): warning C4244: “=”: 从“__int64”转换到“_Ty1”，可能丢失数据
+          with
+          [
+              _Ty1=int
+          ]
+c:\users\justi\documents\github\ourctf\pat (advanced level) practice\1012_the_best_rank\1012_the_best_rank\1012_the_best_rank.cpp(55): warning C4244: “=”: 从“__int64”转换到“_Ty1”，可能丢失数据
+          with
+          [
+              _Ty1=int
+          ]
+c:\users\justi\documents\github\ourctf\pat (advanced level) practice\1012_the_best_rank\1012_the_best_rank\1012_the_best_rank.cpp(58): warning C4244: “=”: 从“__int64”转换到“_Ty1”，可能丢失数据
+          with
+          [
+              _Ty1=int
+          ]
+c:\users\justi\documents\github\ourctf\pat (advanced level) practice\1012_the_best_rank\1012_the_best_rank\1012_the_best_rank.cpp(46): warning C4101: “rank_c”: 未引用的局部变量
+c:\users\justi\documents\github\ourctf\pat (advanced level) practice\1012_the_best_rank\1012_the_best_rank\1012_the_best_rank.cpp(46): warning C4101: “rank_m”: 未引用的局部变量
+c:\users\justi\documents\github\ourctf\pat (advanced level) practice\1012_the_best_rank\1012_the_best_rank\1012_the_best_rank.cpp(46): warning C4101: “rank_e”: 未引用的局部变量
+c:\users\justi\documents\github\ourctf\pat (advanced level) practice\1012_the_best_rank\1012_the_best_rank\1012_the_best_rank.cpp(46): warning C4101: “rank_a”: 未引用的局部变量
+  1012_The_Best_Rank.vcxproj -> C:\Users\justi\Documents\GitHub\OurCTF\PAT (Advanced Level) Practice\1012_The_Best_Rank\x64\Debug\1012_The_Best_Rank.exe
