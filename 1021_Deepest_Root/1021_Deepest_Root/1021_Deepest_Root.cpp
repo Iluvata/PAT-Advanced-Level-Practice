@@ -46,6 +46,8 @@ int main()
 		}
 	}
 	// dfs
+	if(i > n)
+		i = 1;
 	v[i].layer = 0;
 	dfs(v, n, i);
 	// find deepest
@@ -54,8 +56,10 @@ int main()
 			break;
 		}
 	}
+	// more than one component
 	if (i <= n) {
 		int components = 1;
+		// do dfs multiple times
 		while (1) {
 			components += 1;
 			dfs(v, n, i);
@@ -70,6 +74,7 @@ int main()
 		}
 		printf("Error: %d components", components);
 	}
+	// only one component
 	else {
 		int maxlayer = 0;
 		vector<int> points;
@@ -84,7 +89,7 @@ int main()
 				points.push_back(i);
 			}
 		}
-
+		// dfs for the 2nd time
 		v[points[0]].layer = 0;
 		for (int k = 1; k <= n; ++k) {
 			v[k].visited = false;
@@ -103,6 +108,7 @@ int main()
 		}
 
 		sort(points.begin(), points.end());
+		// avoid repeated point
 		i = points[0];
 		cout << i;
 		for (int j = 1; j < points.size(); ++j) {
