@@ -13,7 +13,7 @@ struct Node {
 	char data;
 	int next;
 	bool visited;
-};
+} nodes[100000];
 
 
 int main()
@@ -22,7 +22,7 @@ int main()
 	int c1, c2, n;
 	cin >> c1 >> c2 >> n;
 
-	map<int, Node> nodes;
+	// map<int, Node> nodes;
 	Node letter;
 	letter.visited = false;
 	for (int i = 0; i < n; ++i) {
@@ -30,28 +30,21 @@ int main()
 		nodes[letter.address] = letter;
 	}
 
-	Node l1 = nodes[c1];
-	Node l2 = nodes[c2];
 	bool found = false;
-	while (l1.next != -1 && l1.next != nodes[c1].address) {
-		nodes[l1.address].visited = true;
-		l1 = nodes[l1.next];
+	while (c1 != -1) {
+		nodes[c1].visited = true;
+		c1 = nodes[c1].next;
 	}
-	nodes[l1.address].visited = true;
-
-	while (l2.next != -1 && l2.next != nodes[c2].address) {
-		if (nodes[l2.address].visited) {
+	while (c2 != -1) {
+		if (nodes[c2].visited) {
 			found = true;
 			break;
 		}
-		l2 = nodes[l2.next];
-	}
-	if (nodes[l2.address].visited) {
-		found = true;
+		c2 = nodes[c2].next;
 	}
 
 	if (found) {
-		printf("%05d", l2.address);
+		printf("%05d", c2);
 	}
 	else {
 		cout << -1;
