@@ -31,6 +31,7 @@ bool cmp(Appli &a1, Appli &a2) {
 
 int main()
 {
+	ios::sync_with_stdio(false);
 	int n, m, k;
 	cin >> n >> m >> k;
 	vector<int> quota(m);
