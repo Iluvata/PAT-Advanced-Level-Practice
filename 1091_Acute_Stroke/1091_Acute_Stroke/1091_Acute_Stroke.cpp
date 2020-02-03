@@ -28,9 +28,6 @@ bool judge(int x, int y, int z) {
 }
 
 int bfs(int x, int y, int z) {
-	if (mri[x][y][z] == 0) {
-		return 0;
-	}
 	int cnt = 0;
 	visited[x][y][z] = true;
 	queue<Node> connected;
@@ -44,40 +41,44 @@ int bfs(int x, int y, int z) {
 		connected.pop();
 		cnt++;
 		for (int i = 0; i < 6; ++i) {
-			int xi, yi, zi;
-			xi = now.x + X[i];
-			yi = now.y + Y[i];
-			zi = now.z + Z[i];
+			int xi = now.x + X[i];
+			int yi = now.y + Y[i];
+			int zi = now.z + Z[i];
 			if (judge(xi, yi, zi)) {
 				visited[xi][yi][zi] = true;
-				now.x = xi;
-				now.y = yi;
-				now.z = zi;
-				connected.push(now);
+				p.x = xi;
+				p.y = yi;
+				p.z = zi;
+				connected.push(p);
 			}
 		}
 	}
-	if (cnt < t) {
-		return 0;
+	if (cnt >= t) {
+		return cnt;
 	}
-	return cnt;
+	else
+		return 0;
 }
 
 int main()
 {
-	scanf_s("%d %d %d %d", &m, &n, &l, &t);
-	for (int i = 0; i < l; i++)
-		for (int j = 0; j < m; j++)
-			for (int k = 0; k < n; k++)
-				scanf_s("%d", &mri[j][k][i]);
-	int ans = 0;
-	for (int i = 0; i < l; i++) {
-		for (int j = 0; j < m; j++) {
-			for (int k = 0; k < n; k++) {
-				if (mri[j][k][i] == 1 && visited[j][k][i] == false)
-					ans += bfs(j, k, i);
+	
+	cin >> m >> n >> l >> t;
+	for (int i = 0; i < l; ++i) {
+		for (int j = 0; j < m; ++j) {
+			for (int k = 0; k < n; ++k) {
+				cin >> mri[j][k][i];
 			}
 		}
 	}
-	printf("%d", ans);
+	int totalcnt = 0;
+	for (int i = 0; i < l; ++i) {
+		for (int j = 0; j < m; ++j) {
+			for (int k = 0; k < n; ++k) {
+				if (mri[j][k][i] == 1 && visited[j][k][i] == false)
+					totalcnt += bfs(j, k, i);
+			}
+		}
+	}
+	cout << totalcnt;
 }
