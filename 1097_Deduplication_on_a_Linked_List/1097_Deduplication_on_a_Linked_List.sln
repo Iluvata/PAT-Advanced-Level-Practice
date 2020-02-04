@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.852
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "1097_Deduplication_on_a_Linked_List", "1097_Deduplication_on_a_Linked_List\1097_Deduplication_on_a_Linked_List.vcxproj", "{EDAF3FA9-DEF7-4316-A7AF-BEEAB6149812}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EDAF3FA9-DEF7-4316-A7AF-BEEAB6149812}.Debug|x64.ActiveCfg = Debug|x64
+		{EDAF3FA9-DEF7-4316-A7AF-BEEAB6149812}.Debug|x64.Build.0 = Debug|x64
+		{EDAF3FA9-DEF7-4316-A7AF-BEEAB6149812}.Debug|x86.ActiveCfg = Debug|Win32
+		{EDAF3FA9-DEF7-4316-A7AF-BEEAB6149812}.Debug|x86.Build.0 = Debug|Win32
+		{EDAF3FA9-DEF7-4316-A7AF-BEEAB6149812}.Release|x64.ActiveCfg = Release|x64
+		{EDAF3FA9-DEF7-4316-A7AF-BEEAB6149812}.Release|x64.Build.0 = Release|x64
+		{EDAF3FA9-DEF7-4316-A7AF-BEEAB6149812}.Release|x86.ActiveCfg = Release|Win32
+		{EDAF3FA9-DEF7-4316-A7AF-BEEAB6149812}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FE43D981-DACE-40CE-AA80-150A0BC19AF8}
+	EndGlobalSection
+EndGlobal

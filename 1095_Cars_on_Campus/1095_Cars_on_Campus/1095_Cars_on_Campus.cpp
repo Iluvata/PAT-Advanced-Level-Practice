@@ -144,10 +144,10 @@ int main()
 		}
 	}
 	reverse(eff_recs.begin(), eff_recs.end());
+	int cnt = 0;
+	int j = 0;
 	for (int i = 0; i < k; ++i) {
 		scanf_s("%d:%d:%d", &(t.hh), &(t.mm), &(t.ss));
-		int cnt = 0;
-		int j = 0;
 		while (j < eff_recs.size() && !(t < eff_recs[j].t)) {
 			if (eff_recs[j].isin) {
 				cnt++;
