@@ -37,7 +37,7 @@ bool createTree(Node** root, vector<int> preorder, vector<int> postorder) {
 		vector<int> rpre(preorder.begin() + dist + 1, preorder.end());
 		vector<int> rpost(postorder.begin() + dist + 1, postorder.end());
 		bool isunique = createTree(&((*root)->left), lpre, lpost);
-		isunique = isunique && createTree(&((*root)->right), rpre, rpost);
+		isunique = createTree(&((*root)->right), rpre, rpost) && isunique;
 		return isunique;
 	}
 }
