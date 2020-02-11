@@ -1,7 +1,8 @@
-﻿// 1135_Is_It_A_Red-Black_Tree.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
+# Summary
+要死，就是不知道哪里过不去  
+放上代码  
 
-#include "pch.h"
+```c++
 #include <iostream>
 #include <vector>
 #include <algorithm>
@@ -98,3 +99,4 @@ int main()
 		}
 	}
 }
+```
