@@ -2,79 +2,33 @@
 //
 
 #include "pch.h"
-#include <iostream>
-#include <set>
-#include <vector>
+#include<iostream>
+#include<cstdio>
+#include<vector>
+#include<unordered_map>
 
 using namespace std;
 
-struct Node {
-	int key;
-	Node* left;
-	Node* right;
-};
+int w, u, v, n, m;
 
-int main()
-{
-	int m, n;
-	cin >> m >> n;
-	set<int> elems;
-	Node* root = nullptr;
-	int key;
+unordered_map<int, bool> have;
+
+int main() {
+	scanf_s("%d%d", &m, &n);
+	vector<int> pre(n);
 	for (int i = 0; i < n; ++i) {
-		cin >> key;
-		elems.insert(key);
-		Node** tmp = &root;
-		while (*tmp != nullptr) {
-			if (key < (*tmp)->key) {
-				tmp = &((*tmp)->left);
-			}
-			else {
-				tmp = &((*tmp)->right);
-			}
-		}
-		*tmp = new Node;
-		(*tmp)->left = (*tmp)->right = nullptr;
-		(*tmp)->key = key;
+		scanf_s("%d", &pre[i]);
+		have[pre[i]] = true;
 	}
-
-	int e1, e2;
-	bool hase1, hase2;
 	for (int i = 0; i < m; ++i) {
-		cin >> e1 >> e2;
-		hase1 = elems.count(e1);
-		hase2 = elems.count(e2);
-		if (hase1 && hase2) {
-			Node* tmp = root;
-			while (tmp->key != e1 && tmp->key != e2) {
-				if (tmp->key > e1 && tmp->key > e2) {
-					tmp = tmp->left;
-				}
-				else if (tmp->key < e1 && tmp->key < e2) {
-					tmp = tmp->right;
-				}
-				else {
-					break;
-				}
-			}
-			if (tmp->key == e1) {
-				cout << e1 << " is an ancestor of " << e2 << "." << endl;
-			}
-			else if (tmp->key == e2) {
-				cout << e2 << " is an ancestor of " << e1 << "." << endl;
-			}
-			else {
-				cout << "LCA of " << e1 << " and " << e2 << " is " << tmp->key << "." << endl;
-			}
+		scanf_s("%d%d", &u, &v);
+		for (int j = 0; j < n; ++j) {
+			w = pre[j];
+			if ((w == u) || (w == v) || (w < u && w > v) || (w > u && w < v)) break;
 		}
-		else if (hase1) {
-			cout << "ERROR: " << e2 << " is not found." << endl;
-		}
-		else if (hase2) {
-			cout << "ERROR: " << e1 << " is not found." << endl;
-		}
-		else {
-			cout << "ERROR: " << e1 << " and " << e2 << " are not found." << endl;
-		}
+		if (!have[u] && !have[v]) printf("ERROR: %d and %d are not found.\n", u, v);
+		else if (!have[u] || !have[v]) printf("ERROR: %d is not found.\n", have[u] ? v : u);
+		else if (u == w || v == w) printf("%d is an ancestor of %d.\n", w, w == v ? u : v);
+		else printf("LCA of %d and %d is %d.\n", u, v, w);
 	}
 }
